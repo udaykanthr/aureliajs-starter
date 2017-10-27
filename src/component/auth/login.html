@@ -1,0 +1,29 @@
+<template>
+    <div class="cms-pre-login">
+        <header role="header" class="cms-login-header">
+            <a class="logo">
+                <img src="scripts/assets/images/login_logo.png" alt="phenom people logo" class="img-responsive"/>
+            </a>
+        </header>
+        <div ppc-loading-img="show-loader.bind: showLoader"></div> 
+        <h3 class="login-error error text-center" if.bind="showErrorMsg">You've entered an invalid username or password</h3>
+        <div class="cms-login-screen">
+            <h1 class="login-title">Login</h1>
+            <h4>Please enter your login details</h4>
+            <form class="login-form" submit.delegate="login()">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" class="form-control" value.bind="users.username" placeholder="Enter email" required>                
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" class="form-control" value.bind="users.password" placeholder="Enter password" required>                
+                </div>
+                <input type="submit" class="btn primary-button" value="Login"/>
+                <div class="text-center">
+                    <a href="forgotPassword"> Forgot password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</template>
