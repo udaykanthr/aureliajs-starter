@@ -131,6 +131,7 @@
           "aurelia-task-queue",
           "aurelia-templating",
           "aurelia-templating-binding",
+          "jquery",
           "bootstrap-sass",
           "text",
           {
