@@ -30,6 +30,20 @@
     "source": "src/assets/sass/*.scss",
     "output": "scripts/assets/css"
   },
+  "fontProcessor": {
+    "id": "fonts",
+    "displayName": "fonts",
+    "fileExtension": ".*",
+    "source": "src/assets/fonts/*.*",
+    "output": "scripts/assets/fonts"
+  },
+  "imagesProcessor": {
+    "id": "images",
+    "displayName": "images",
+    "fileExtension": ".*",
+    "source": "src/assets/images/*.*",
+    "output": "scripts/assets/images"
+  },    
   "editor": {
     "id": "none",
     "displayName": "None"
@@ -117,6 +131,7 @@
           "aurelia-task-queue",
           "aurelia-templating",
           "aurelia-templating-binding",
+          "bootstrap-sass",
           "text",
           {
             "name": "aurelia-templating-resources",

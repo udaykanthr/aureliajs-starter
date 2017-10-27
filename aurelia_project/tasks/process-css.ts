@@ -5,8 +5,10 @@ import * as project from '../aurelia.json';
 import {build} from 'aurelia-cli';
 
 export default function processCSS() {
-  return gulp.src(project.cssProcessor.source)
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(build.bundle());
+     return gulp.src(project.cssProcessor.source)
+      .pipe(sourcemaps.init())
+      .pipe(sass().on('error', sass.logError))
+      .pipe(sourcemaps.write('./map'))
+      .pipe(gulp.dest(project.cssProcessor.output))
+      // .pipe(build.bundle());
 };
