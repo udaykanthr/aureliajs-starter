@@ -1,15 +1,17 @@
-import { inject, bindable, observable } from 'aurelia-framework';
+import { autoinject, bindable, observable } from 'aurelia-framework';
 import {routes} from './routes';
 import { EventAggregator } from 'aurelia-event-aggregator';
 import { AuthorizeStep } from '../src/component/auth/auth-step'; 
 
-@inject(EventAggregator, AuthorizeStep)
+@autoinject()
 export class App {
     
     @bindable
     loggedIn;
+
+    private eventAggregator = undefined;
     
-    constructor(eventAggregator) {
+    constructor(eventAggregator:EventAggregator) {
 	this.eventAggregator = eventAggregator;
     }
     
@@ -19,7 +21,7 @@ export class App {
 	config.map(routes);
 	config.addPipelineStep('authorize', AuthorizeStep);
 	
-	this.router = router;
+	// this.router = router;
 	this.loggedIn = false;
     }
     
