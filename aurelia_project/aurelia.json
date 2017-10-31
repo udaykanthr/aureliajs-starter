@@ -34,7 +34,7 @@
     "id": "fonts",
     "displayName": "fonts",
     "fileExtension": ".*",
-    "source": "src/assets/fonts/*.*",
+    "source": "src/assets/fonts/*/*.*",
     "output": "scripts/assets/fonts"
   },
   "imagesProcessor": {

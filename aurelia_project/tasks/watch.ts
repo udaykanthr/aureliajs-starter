@@ -7,6 +7,8 @@ import * as project from '../aurelia.json';
 import transpile from './transpile';
 import processMarkup from './process-markup';
 import processCSS from './process-css';
+import processImages from './process-images';
+import processFonts from './process-fonts';
 import copyFiles from './copy-files';
 
 const debounceWaitTime = 100;
@@ -18,6 +20,8 @@ let watchCallback = () => { };
 watches[project.transpiler.source] = { name: 'transpile', callback: transpile };
 watches[project.markupProcessor.source] = { name: 'markup', callback: processMarkup };
 watches[project.cssProcessor.source] = { name: 'CSS', callback: processCSS };
+watches[project.imagesProcessor.source] = { name: 'Process Images', callback: processImages };
+watches[project.fontProcessor.source] = { name: 'Process Fonts', callback: processFonts };
 if (typeof project.build.copyFiles === 'object') {
   for (let src of Object.keys(project.build.copyFiles)) {
     watches[src] = { name: 'file copy', callback: copyFiles };
