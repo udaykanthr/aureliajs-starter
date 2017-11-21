@@ -27,6 +27,7 @@ export class App {
     
     attached() {
 	this.eventAggregator.subscribe('nav::toggleLogin', (data) => {
+	    console.log("Logged in/out command recieved ...", data);
 	    AuthorizeStep.auth.isAuthenticated = data.loggedIn;
 	});
     }

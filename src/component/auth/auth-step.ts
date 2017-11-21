@@ -8,7 +8,7 @@ export class AuthorizeStep {
     };
 
     run(navigationInstruction, next) {
-	console.log("Inside auth step ... ");
+	console.log("Inside auth step ... ", AuthorizeStep.auth.isAuthenticated);
 	let isLoggedIn = AuthorizeStep.auth.isAuthenticated;
 	
 	// currently active route config
